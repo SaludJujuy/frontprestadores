@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+#searchInput {
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Cuando el input gane el foco, se agregará un borde azul en la parte inferior */
+  
+  #searchInput:focus {
+    border-bottom: 2px solid #4575b6;
+  }
+
+  .app {
+ 
+
+    margin: 0;
+  height: 100vh;
+  padding: 0;
+  font-family: "lato", sans-seriff;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  }
+  
+  /* Colapsa todos los bordes que separan a cada celda. La tabla ocupa todo el ancho de ".app", además se establece una sobra gris alrededor de la tabla */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 5px 7px gray;
+  }
+  
+  /* Establece una sombra en la cabeza de la tabla */
+  thead {
+    box-shadow: 0px 0px 10px gray;
+  }
+  
+  /* Agrega algo de espacio al rededor del encabezado de la tabla. Alinea el texto a la dereche y lo convierte a mayúsculas */
+  
+  th {
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: left;
+  }
+  
+  /* Agrega un padding en cada celda */
+  td {
+    padding: 0.5rem 3rem;
+    font-size: 1rem;
+  }
+  
+  /* Crea una alternancia de colores a lo largo de las filas de la tabla. Establece en color azul todas las filas pares (2, 4, 6 ...) */
+  
+  tr:nth-child(even) {
+    background-color: #dee8f5;
+  }
+
+  section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+
+  .input-container {
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+  }
+  
+  .input-button-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el input y el botón */
+  }
+  
+  /* Ajusta el ancho del input */
+  .mat-input-element {
+    flex: 1;
+  }

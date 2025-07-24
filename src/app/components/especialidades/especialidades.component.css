@@ -1,0 +1,16 @@
+
+.input-container {
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+  }
+  
+  .input-button-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el input y el botón */
+  }
+  
+  /* Ajusta el ancho del input */
+  .mat-input-element {
+    flex: 1;
+  }

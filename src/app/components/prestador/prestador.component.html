@@ -1,0 +1,128 @@
+<app-nav></app-nav>
+<div class="container scroll-y">
+
+    <h1 class="mt-1 mb-5 pb-1 text-center title">
+        <span>FICHA DE PRESTADOR</span>        
+    </h1>
+ 
+
+    <button class="button-right blue-fab" mat-fab aria-label="Example icon button with a delete icon" matTooltip="ver pacientes">
+        <mat-icon>people</mat-icon>
+    </button>
+    <button class="button-right pourpe-fab" mat-fab aria-label="Example icon button with a delete icon" matTooltip="ver obras sociales">
+        <mat-icon>list_alt</mat-icon>
+    </button>
+    <button class="button-right green-fab" mat-fab aria-label="Example icon button with a delete icon" matTooltip="ver cuenta corriente">
+        <mat-icon>account_balance</mat-icon>
+    </button>
+    <!--
+    <button class="button-right" mat-fab aria-label="Example icon button with a delete icon" matTooltip="ver cuenta corriente">
+        <mat-icon>menu_book</mat-icon>
+    </button>
+
+    <button class="button-right green-fab" mat-fab aria-label="Download" matTooltip="descargar"  (click)="descargarCSV()">
+        <mat-icon>
+            <span class="material-symbols-outlined">
+                download
+            </span>
+        </mat-icon>
+    </button>
+    -->
+</div>
+
+<div class="scroll-y">
+<div class="card-columns">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">NUMERO PRESTADOR</h4>
+            <p class="card-text">{{prestador.NroPrestador}}</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">MATRICULA PRESTADOR</h4>
+            <p class="card-text">{{prestador.Matricula}}</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">CUIL PRESTADOR</h4>
+            <p class="card-text">{{prestador.CUIT_CUIL}}</p>
+        </div>
+    </div>
+</div>
+<div class="card-columns">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">TIPO PRESTADOR</h4>
+            <p class="card-text">{{prestador.Tipo}}</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">NOMBRE PRESTADOR</h4>
+            <p class="card-text">{{prestador.Nombre}}</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">ESTADO PRESTADOR</h4>
+            <p class="card-text">{{prestador.Activo === 1 ? 'ACTIVO' : 'INACTIVO'}}</p>
+        </div>
+    </div>
+</div>
+<div class="card-columns">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">CONVENIO SALUD JUJUY</h4>
+            <p class="card-text">{{prestador.ConvenioSaludJujuy === 1 ? 'SI' : 'NO'}}</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">CONVENIO CAMARA</h4>
+            <p class="card-text">́{{prestador.ConvenioCamara === 1 ? 'SI' : 'NO'}}</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">FECHA ALTA</h4>
+            <p class="card-text">{{prestador.fechaAlta}}</p>
+        </div>
+    </div>
+</div>
+<div class="card-columns">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">PROVINCIA</h4>
+            <p class="card-text">{{prestador.NombreProvincia}}</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">LOCALIDAD</h4>
+            <p class="card-text">{{prestador.NombreLocalidad}}</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Direccion</h4>
+            <p class="card-text">{{prestador.Direccion}}</p>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title text-center">OBSERVACION</h4>
+        <p class="card-text">{{prestador.Observacion}}</p>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title text-center">OBRAS SOCIALES</h4>
+        <p class="card-text">{{obrasSocialesString}}</p>
+    </div>
+</div>
+</div>

@@ -1,0 +1,85 @@
+<app-nav></app-nav>
+<form  method="post">
+  <mat-form-field class="input-container">
+    
+    <mat-label>Ingresar Datos</mat-label>
+    <div class="input-button-container">
+      <input matInput type="text" placeholder="datos..." [(ngModel)]="text" name="text" id="text" required (input)="update_table()">
+      <button mat-raised-button color="primary" type="button" (click)="update_table()">Buscar</button>
+      <button mat-raised-button color="primary" (click)="descargarCSV()">Descarga</button>
+    </div>
+    <!--
+    <mat-error *ngIf="text.invalid">{{getErrorMessage()}}</mat-error>
+    -->
+  </mat-form-field>
+</form>
+<div class="mat-elevation-z8 mat-table-responsive scroll-y">
+  <table mat-table [dataSource]="dataSource" id="names">
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="IdPrestador">
+      <th mat-header-cell *matHeaderCellDef class=" text-center"> ID </th>
+      <td mat-cell *matCellDef="let element" class=" text-center"> {{element.IdPrestador}} </td>
+    </ng-container>
+
+    <!-- Nro Column -->
+    <ng-container matColumnDef="NroPrestador">
+      <th mat-header-cell *matHeaderCellDef> Nro Prestador </th>
+      <td mat-cell *matCellDef="let element" class=" text-center"> {{element.NroPrestador}} </td>
+    </ng-container>
+
+    <!-- CUIL Column (click)="navigateToAfiliado(element)"-->
+    <ng-container matColumnDef="CUIT_CUIL">
+      <th mat-header-cell *matHeaderCellDef class=" text-center"> CUIL </th>
+      <td mat-cell *matCellDef="let element" class=" text-center">
+        <a href="javascript:void(0)" (click)="navigateToPrestador(element)"> {{element.CUIT_CUIL}} </a>
+         
+      </td>
+    </ng-container>
+
+    <!-- Nombre Column -->
+    <ng-container matColumnDef="Nombre">
+      <th mat-header-cell *matHeaderCellDef class=" text-center"> Nombre </th>
+      <td mat-cell *matCellDef="let element" class=" text-center"> {{element.Nombre}} </td>
+    </ng-container>
+
+    <!-- Tipo Column -->
+    <ng-container matColumnDef="Tipo">
+      <th mat-header-cell *matHeaderCellDef class=" text-center"> Tipo </th>
+      <td mat-cell *matCellDef="let element" class=" text-center"> {{element.Tipo}} </td>
+    </ng-container>
+
+    <!-- Camara Column -->
+    <ng-container matColumnDef="ConvenioCamara">
+      <th mat-header-cell *matHeaderCellDef class=" text-center"> Camara </th>
+      <td mat-cell *matCellDef="let element" class=" text-center"> {{element.ConvenioCamara === 1 ? 'SI' : 'NO'}} </td>
+    </ng-container>
+
+    <!-- Salud Jujuy Column -->
+    <ng-container matColumnDef="ConvenioSaludJujuy">
+      <th mat-header-cell *matHeaderCellDef class=" text-center"> Salud Jujuy </th>
+      <td mat-cell *matCellDef="let element" class=" text-center"> {{element.ConvenioSaludJujuy === 1 ? 'SI' : 'NO'}} </td>
+    </ng-container>
+
+    <!-- Observacion Column -->
+    <ng-container matColumnDef="Direccion">
+      <th mat-header-cell *matHeaderCellDef class=" text-center"> Direccion </th>
+      <td mat-cell *matCellDef="let element" class=" text-center"> {{element.Direccion}} </td>
+    </ng-container>
+
+     <!-- Zona Column -->
+     <ng-container matColumnDef="Zona">
+      <th mat-header-cell *matHeaderCellDef class=" text-center"> Zona </th>
+      <td mat-cell *matCellDef="let element" class=" text-center"> {{element.Zona === null ? 'CAPITAL' : element.Zona}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20, 50, 100]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>
+
