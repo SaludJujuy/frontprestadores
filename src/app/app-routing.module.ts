@@ -7,16 +7,22 @@ import { ObrasSocialesComponent } from './components/obras-sociales/obras-social
 import { LoginComponent } from './layout/publico/login/login.component';
 import { AuthGuard } from './util/auth.guard';
 import { PrestadorComponent } from './components/prestador/prestador.component';
+import { CuentaComponent } from './components/cuenta/cuenta.component';
+import { AfiliadosComponent } from './components/afiliados/afiliados.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path:'login',component: LoginComponent},
   { path:'prestadores', component:PrestadoresComponent,canActivate:[AuthGuard] },
   { path:'prestador', component:PrestadorComponent,canActivate:[AuthGuard] },
-  { path:'zona', component:ZonasComponent },
+  { path:'zona', component:ZonasComponent,canActivate:[AuthGuard] },
   { path:'especialidades', component:EspecialidadesComponent,canActivate:[AuthGuard] },
   { path:'obrasocial', component:ObrasSocialesComponent,canActivate:[AuthGuard] },
-  {path:'**',redirectTo:'prestador',pathMatch:'full'}
+  { path:'cuenta', component:CuentaComponent,canActivate:[AuthGuard] },
+  { path:'afiliados', component:AfiliadosComponent,canActivate:[AuthGuard] },
+  // Redireccionar a la lista de prestadores si la ruta no coincide con ninguna de las anteriores
+  // Esto es útil para manejar rutas no encontradas
+  { path:'**',redirectTo:'prestadores',pathMatch:'full' }
 ];
 
 @NgModule({

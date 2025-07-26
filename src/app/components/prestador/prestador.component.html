@@ -1,18 +1,21 @@
 <app-nav></app-nav>
 <div class="container scroll-y">
 
+    <button class="button-left red-fab" mat-fab aria-label="Example icon button with a delete icon" matTooltip="ver cuenta corriente" (click)="salir()">
+        <mat-icon>west</mat-icon>
+    </button>
+
     <h1 class="mt-1 mb-5 pb-1 text-center title">
         <span>FICHA DE PRESTADOR</span>        
     </h1>
  
-
-    <button class="button-right blue-fab" mat-fab aria-label="Example icon button with a delete icon" matTooltip="ver pacientes">
+    <button class="button-right blue-fab" mat-fab aria-label="Example icon button with a delete icon" matTooltip="ver pacientes" (click)="afiliados(element)">
         <mat-icon>people</mat-icon>
     </button>
-    <button class="button-right pourpe-fab" mat-fab aria-label="Example icon button with a delete icon" matTooltip="ver obras sociales">
+    <button class="button-right pourpe-fab" mat-fab aria-label="Example icon button with a delete icon" matTooltip="ver obras sociales" (click)="obrassociales()">
         <mat-icon>list_alt</mat-icon>
     </button>
-    <button class="button-right green-fab" mat-fab aria-label="Example icon button with a delete icon" matTooltip="ver cuenta corriente">
+    <button class="button-right green-fab" mat-fab aria-label="Example icon button with a delete icon" matTooltip="ver cuenta corriente" (click)="cuenta()">
         <mat-icon>account_balance</mat-icon>
     </button>
     <!--

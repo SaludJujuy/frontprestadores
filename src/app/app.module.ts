@@ -38,6 +38,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { ToastrModule } from 'ngx-toastr';
 import { PrestadorComponent } from './components/prestador/prestador.component';
+import { AfiliadosComponent } from './components/afiliados/afiliados.component';
+import { CuentaComponent } from './components/cuenta/cuenta.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +52,9 @@ import { PrestadorComponent } from './components/prestador/prestador.component';
     ZonasComponent,
     EspecialidadesComponent,
     ObrasSocialesComponent,
-    PrestadorComponent
+    PrestadorComponent,
+    AfiliadosComponent,
+    CuentaComponent
   ],
   imports: [
     MatTabsModule,

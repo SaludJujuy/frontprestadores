@@ -16,6 +16,12 @@
     right: 0; /* Mueve el botón al margen derecho */
 }
 
+.button-left {
+    margin-right: auto;
+    left: 0; /* Mueve el botón al margen derecho */
+}
+
+
 .title {
     flex-grow: 1;
     text-align: center;
@@ -34,6 +40,11 @@
 
 .pourpe-fab {
   background-color: #834ac5; /* verde Material */
+  color: white;
+}
+
+.red-fab {
+  background-color: #be1d1d; /* verde Material */
   color: white;
 }
 

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Prestador } from 'src/app/models/prestador.model';
 
 @Injectable({
   providedIn: 'root'
@@ -6,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class DatatransferenceService {
 
   private data:any;
+  private prestador: any;
 
   constructor() { }
 
@@ -15,5 +17,13 @@ export class DatatransferenceService {
 
   getData(): any {
     return this.data;
+  }
+
+  setPrestador(prestador: any): void{
+    this.prestador = prestador;
+  }
+
+  getPrestador():any{
+    return this.prestador;
   }
 }
