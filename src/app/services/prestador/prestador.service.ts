@@ -79,6 +79,24 @@ export class PrestadorService {
     }
   }
 
+  getPrestadorWithAfiliado(param: any): Observable<any> {
+    try {
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'http://localhost:4200/', // Especifica el origen permitido
+          'Access-Control-Allow-Methods': 'POST, GET, PUT, DELETE', // Métodos permitidos
+          'Access-Control-Allow-Headers': 'Content-Type, Authorization',    
+        })
+      };
+      return this._http.post(this.urlBase + 'searchaf/' + param, httpOptions);
+    } catch (error) {
+      // Manejar el error si param no es una cadena JSON válida
+      console.error('Error al analizar el parámetro JSON:', error);
+      return of(null); // Puedes devolver un Observable con un valor nulo o un valor de error personalizado
+    }
+  }
+
   getExportarPrestadores(param: any): Observable<Blob> {
     if(param.length === 0) {
       return this._http.get(this.urlBase + 'exportall/', {

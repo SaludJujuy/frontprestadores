@@ -1,0 +1,68 @@
+.container {
+    display: flex;
+    justify-content: center; /* Centra el título horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    position: relative;
+}
+
+.mat-column-IdPrestador,
+.mat-column-NroPrestador,
+.mat-column-CUIT_CUIL,
+.mat-column-Nombre,
+.mat-column-Tipo,
+.mat-column-ConvenioCamara,
+.mat-column-ConvenioSaludJujuy,
+.mat-column-Direccion {
+  max-width: 200px; /* Ajusta el ancho máximo según tus necesidades */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Puedes agregar un efecto de "ellipsis" si el contenido es muy largo */
+  white-space: nowrap;
+}
+
+.mat-column-Nombre{
+  max-width: 300px; /* Ajusta el ancho máximo según tus necesidades */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Puedes agregar un efecto de "ellipsis" si el contenido es muy largo */
+  white-space: nowrap;
+}
+
+.mat-paginator {
+  width: 100%;
+  justify-content: center;
+}
+
+.mat-column-Direccion {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.mat-table-responsive{
+  overflow-x: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .mat-table-responsive {
+    overflow-x: auto;
+    display: block;
+  }
+}
+
+.red-fab {
+  background-color: #be1d1d; /* verde Material */
+  color: white;
+}
+
+.green-fab {
+  background-color: #4CAF50; /* verde Material */
+  color: white;
+}
+
+.button-right {
+    margin-left: auto;
+    right: 0; /* Mueve el botón al margen derecho */
+}
+
+.button-left {
+    margin-right: auto;
+    left: 0; /* Mueve el botón al margen derecho */
+}

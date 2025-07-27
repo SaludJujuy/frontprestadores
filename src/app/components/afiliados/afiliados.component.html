@@ -1,1 +1,78 @@
 <app-nav></app-nav>
+<button class="button-left red-fab" mat-fab aria-label="Example icon button with a delete icon"
+    matTooltip="salir" (click)="salir()">
+    <mat-icon>west</mat-icon>
+</button>
+<button class="button-right green-fab" mat-fab aria-label="Download" matTooltip="descargar" >
+    <mat-icon>
+        <span class="material-symbols-outlined">
+            download
+        </span>
+    </mat-icon>
+</button>
+<div class="scroll-y row">
+
+    <div class="row-cards col-9">
+        <!-- Primera card (70%) -->
+        <div class="card" style="flex: 0 0 70%; background-color: rgb(40, 151, 216); color: aliceblue;">
+            <div class="card-body">
+                <h1 class="card-title">NOMBRE</h1>
+                <p class="card-text">{{prestador.Nombre}}</p>
+            </div>
+        </div>
+    </div>
+    <!-- Segunda card (30%) -->
+    <div class="card col-3" style="background-color: rgb(40, 216, 49); color: aliceblue;">
+        <div class="card-body">
+            <h1 class="card-title">NOMBRE</h1>
+            <p class="card-text">{{prestador.Nombre}}</p>
+        </div>
+    </div>
+    <!-- card-columns puede quedar si luego las activás -->
+
+    <h1 class="mt-1 mb-5 pb-1 text-center title">
+        <span>LISTA DE AFILIADOS ATENDIDO</span>        
+    </h1>
+    <div class="mat-elevation-z8 mat-table-responsive scroll-y">
+        <table mat-table [dataSource]="dataSource" id="names">
+
+            <!-- Id Column -->
+            <ng-container matColumnDef="IdReceta">
+                <th mat-header-cell *matHeaderCellDef class=" text-center"> ID </th>
+                <td mat-cell *matCellDef="let element" class=" text-center"> {{element.IdReceta}} </td>
+            </ng-container>
+
+            <!-- Nro Column -->
+            <ng-container matColumnDef="Numero">
+                <th mat-header-cell *matHeaderCellDef> Numero </th>
+                <td mat-cell *matCellDef="let element" class=" text-center"> {{element.Numero}} </td>
+            </ng-container>
+
+            <!-- Nro Afiliado-->
+            <ng-container matColumnDef="NroAfiliado">
+                <th mat-header-cell *matHeaderCellDef class=" text-center"> Numero Af. </th>
+                <td mat-cell *matCellDef="let element" class=" text-center">{{element.NroAfiliado}}</td>
+            </ng-container>
+
+            <!-- Nombre Column -->
+            <ng-container matColumnDef="NombreAfiliado">
+                <th mat-header-cell *matHeaderCellDef class=" text-center"> Afiliado </th>
+                <td mat-cell *matCellDef="let element" class=" text-center"> {{element.NombreAfiliado}} </td>
+            </ng-container>
+
+            <!-- Fecha Column -->
+            <ng-container matColumnDef="FechaEmision">
+                <th mat-header-cell *matHeaderCellDef class=" text-center"> Fecha Emision </th>
+                <td mat-cell *matCellDef="let element" class=" text-center"> {{element.FechaEmision}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20, 50, 100]" showFirstLastButtons
+            aria-label="Select page of periodic elements">
+        </mat-paginator>
+    </div>
+
+</div>
