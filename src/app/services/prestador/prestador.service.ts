@@ -108,4 +108,15 @@ export class PrestadorService {
     });
   }
 
+  getExportarAfiliados(param: any): Observable<Blob> {
+    /*
+    if(param.length === 0) {
+      return this._http.get(this.urlBase + 'exportaf/', {
+        responseType: 'blob' // 👈 importante para recibir archivos
+      });
+    }*/
+    return this._http.get(this.urlBase + 'exportaf/' + param, {
+      responseType: 'blob' // 👈 importante para recibir archivos
+    });
+  }
 }
